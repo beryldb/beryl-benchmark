@@ -1,0 +1,22 @@
+name: macOS build
+on:
+  - pull_request
+  - push
+jobs:
+  build:
+    runs-on: macos-latest
+    env:
+      CXXFLAGS: -std=${{ matrix.standard }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Running macOS build workflow.
+        run: ./make/build ${{ matrix.compiler }}
+      - name: Check version
+        run: ./beryl-bench --version      
+    strategy:
+      matrix:
+        compiler:
+          - g++-10
+        standard:
+          - c++14
+

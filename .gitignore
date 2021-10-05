@@ -1,0 +1,13 @@
+vgcore.*
+!.git*
+*.o
+\#*#
+
+/.configure
+/Makefile
+/build
+core
+
+/beryl-bench
+/config.log
+/.vscode/
