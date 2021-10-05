@@ -148,7 +148,6 @@ void Configuration::SetAll()
               Kernel->Config->port = Kernel->Config->usercmd.port;
         }
 
-
         if (!Kernel->Config->usercmd.pass.empty())
         {
               Kernel->Config->pass = Kernel->Config->usercmd.pass;
