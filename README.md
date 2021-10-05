@@ -76,7 +76,6 @@ GET                            | 10         | 0.095521
 SET                            | 10         | 0.095568  
 
 Benchmark finished : 0.670838s
-
 ```
 
 ## Usage
@@ -92,7 +91,7 @@ Usage: ./beryl-cli <arguments>
      --use <1, 100>,              Use a different select than 1.
      --runs <int>, 		  Cycles to run tests on. 
      --length <int>,	 	  Length of keys to use.
-     --tests <tests>,             Tests to run (separated by comma): incr,get,set,lpush,ldel,hset,hdel,vpush
+     --tests <tests>,             Tests: incr,get,set,lpush,ldel,hset,hdel,vpush
      --version,                   Display version and exit.
 ```
 
