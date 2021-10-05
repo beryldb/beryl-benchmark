@@ -92,7 +92,7 @@ Usage: ./beryl-cli <arguments>
      --use <1, 100>,              Use a different select than 1.
      --runs <int>, 		  Cycles to run tests on. 
      --length <int>,	 	  Length of keys to use.
-     --tests <tests>,                     What tests to run (separated by comma): incr,get,set,lpush,ldel,hset,hdel,vpush
+     --tests <tests>,             Tests to run (separated by comma): incr,get,set,lpush,ldel,hset,hdel,vpush
      --version,                   Display version and exit.
 ```
 
