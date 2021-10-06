@@ -26,7 +26,7 @@
 
 static int   conn;  /* connection socket */
 
-void Deliver(const std::string& title, int *counter, std::chrono::steady_clock::time_point begin)
+void Deliver(const std::string& title, int *counter)
 {
 	*counter = *counter + 1;
 	
@@ -43,8 +43,9 @@ void Deliver(const std::string& title, int *counter, std::chrono::steady_clock::
         else
         {
                 std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-                std::chrono::duration<double> tp = std::chrono::duration_cast<std::chrono::microseconds>(end - begin);
                 
+                std::chrono::duration<double> tp = std::chrono::duration_cast<std::chrono::microseconds>(end - Kernel->Link.begin);
+
                 std::cout << Daemon::Format("%-30s | %-10s | %-10f", title.c_str(), convto_string(*counter).c_str(), tp.count());
         	std::cout << std::endl;
         	*counter = 0;
@@ -254,39 +255,39 @@ static void UnknownMessage(struct Param *p)
 	switch (Kernel->Link.current)
 	{
 		case 1: 
-			Deliver("GET",   &Kernel->Link.total_get, Kernel->Link.begin);		
+			Deliver("GET",   &Kernel->Link.total_get);		
 		break;
 
 		case 2:
-	                Deliver("LPUSH", &Kernel->Link.total_lpush, Kernel->Link.begin);
+	                Deliver("LPUSH", &Kernel->Link.total_lpush);
 		break;
 		
                 case 3:
-                        Deliver("VPUSH", &Kernel->Link.total_vpush, Kernel->Link.begin);
+                        Deliver("VPUSH", &Kernel->Link.total_vpush);
                 break;
 		
                 case 4:
-                        Deliver("HSET", &Kernel->Link.total_hset, Kernel->Link.begin);
+                        Deliver("HSET", &Kernel->Link.total_hset);
                 break;
 
                 case 5:
-                        Deliver("INCR", &Kernel->Link.total_incr, Kernel->Link.begin);
+                        Deliver("INCR", &Kernel->Link.total_incr);
                 break;
 
                 case 6: 
-                        Deliver("SET", &Kernel->Link.total_set, Kernel->Link.begin);           
+                        Deliver("SET", &Kernel->Link.total_set);           
                 break;
                 
                 case 7: 
-                        Deliver("LDEL", &Kernel->Link.total_ldel, Kernel->Link.begin);
+                        Deliver("LDEL", &Kernel->Link.total_ldel);
                 break;
                 
                 case 8: 
-                        Deliver("DECR", &Kernel->Link.total_decr, Kernel->Link.begin);
+                        Deliver("DECR", &Kernel->Link.total_decr);
                 break;
 
                 case 9:
-                        Deliver("HDEL", &Kernel->Link.total_hdel, Kernel->Link.begin);
+                        Deliver("HDEL", &Kernel->Link.total_hdel);
                 break;
                 
 		default:
