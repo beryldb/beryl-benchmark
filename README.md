@@ -34,11 +34,44 @@ You may now build Beryl-benchmark:
 make -j2 install
 ```
 
+## Usage
+
+```
+Usage: ./beryl-cli <arguments>
+
+     --login <username>,          Login with a different username.
+     --host <host>,               Connect to provided host.
+     --password <password>,       Use a different password than default.
+     --port <int>,                Use a differnt port than 6378
+     --times <int>,               Repeat test X times.
+     --use <1, 100>,              Use a different select than 1.
+     --runs <int>,                Cycles to run tests on. 
+     --length <int>,              Length of keys to use.
+     --tests <tests>,             Tests: incr,get,set,lpush,ldel,hset,hdel,vpush
+     --version,                   Display version and exit.
+```
+
 ## Running
+
+By default, benchmark will run 100 operations on these tests: **INCR, GET, SET,
+VPUSH, HSET, LDEL, DECR, HDEL**.
 
 ```
 ./beryl-bench
+
+Benchmark                      | Operations | Time elapsed (s)
+―――――――――――――――――――――――――――――― | ―――――――――― | ――――――――――
+INCR                           | 100        | 1.048768  
+GET                            | 100        | 1.045704  
+SET                            | 100        | 1.049898  
+VPUSH                          | 100        | 1.043575  
+HSET                           | 100        | 1.042865  
+LDEL                           | 100        | 1.042550  
+DECR                           | 100        | 1.047340  
+HDEL                           | 100        | 1.050391 
 ```
+
+## Examples
 
 In the example below, we test all defined operations on 100 operations
 in each cycle:
@@ -76,23 +109,6 @@ GET                            | 10         | 0.095521
 SET                            | 10         | 0.095568  
 
 Benchmark finished : 0.670838s
-```
-
-## Usage
-
-```
-Usage: ./beryl-cli <arguments>
-
-     --login <username>,          Login with a different username.
-     --host <host>,               Connect to provided host.
-     --password <password>,       Use a different password than default.
-     --port <int>,                Use a differnt port than 6378
-     --times <int>,               Repeat test X times.
-     --use <1, 100>,              Use a different select than 1.
-     --runs <int>, 		  Cycles to run tests on. 
-     --length <int>,	 	  Length of keys to use.
-     --tests <tests>,             Tests: incr,get,set,lpush,ldel,hset,hdel,vpush
-     --version,                   Display version and exit.
 ```
 
 <br>
