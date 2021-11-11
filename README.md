@@ -25,15 +25,15 @@ Beryl-benchmark is supported in MacOS, BSD and Linux systems.
 Clone latest stable version:
 
 ```
-git clone --branch 1.0 https://github.com/beryldb/beryl-benchmark.git --depth=5
-cd beryl-benchmark/
+$ git clone --branch 1.0 https://github.com/beryldb/beryl-benchmark.git
+$ cd beryl-benchmark/
 ```
 
 You may now build Beryl-benchmark:
 
 ```
-./configure
-make -j2 install
+$ ./configure
+$ make -j2 install
 ```
 
 ## Usage
