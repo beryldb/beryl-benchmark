@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://static.beryl.dev/smaller.png">
+</p>
+
 # Beryl Benchmark
 
 <a target="_blank" href="https://github.com/beryldb/beryl-benchmark/actions"><img src="https://github.com/beryldb/beryl-benchmark/workflows/Ubuntu%20build/badge.svg?2"></a>
@@ -7,8 +11,6 @@
 [![Twitter](https://img.shields.io/twitter/follow/beryldb?color=%23179CF0&logo=twitter&style=flat-square "@beryldb on Twitter")](https://twitter.com/beryldb)
 [![Discord Server](https://img.shields.io/discord/823028202318200912?color=7289da&logo=discord "Discord Server")](https://discord.gg/GRCEuMdYRt)
 <br>
-
-![Logo](https://docs.beryl.dev/img/smaller.png??)
 
 ## What is Beryl-benchmark?
 
